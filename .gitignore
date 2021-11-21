@@ -221,3 +221,6 @@ $RECYCLE.BIN/
 dist/
 build/
 .tsbuildinfo
+
+*.docx
+*.yaml

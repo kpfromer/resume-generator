@@ -2,19 +2,18 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^16.6.2
-  '@types/yaml': ^1.9.7
-  docx: ^6.0.3
+  docx: 6.0.0
   prettier: ^2.3.2
   remark-parse: ^10.0.0
   ts-mdast: ^1.0.0
-  ts-node: ^10.2.1
+  ts-node: 10.4.0
   typescript: ^4.3.5
   unified: ^10.1.0
   vfile: ^5.0.2
   yaml: ^1.10.2
 
 dependencies:
-  docx: 6.0.3
+  docx: 6.0.0
   remark-parse: 10.0.0
   ts-mdast: 1.0.0
   unified: 10.1.0
@@ -23,9 +22,8 @@ dependencies:
 
 devDependencies:
   '@types/node': 16.6.2
-  '@types/yaml': 1.9.7
   prettier: 2.3.2
-  ts-node: 10.2.1_c780171742f6906a053a603dfa210a4e
+  ts-node: 10.4.0_c780171742f6906a053a603dfa210a4e
   typescript: 4.3.5
 
 packages:
@@ -35,8 +33,8 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /@cspotcode/source-map-support/0.6.1:
-    resolution: {integrity: sha512-DX3Z+T5dt1ockmPdobJS/FAsQPW4V4SrWEhD2iYQT2Cb2tQsiMnYxrcUH9By/Z3B+v0S5LMBkQtV/XOBbpLEOg==}
+  /@cspotcode/source-map-support/0.7.0:
+    resolution: {integrity: sha512-X4xqRHqN8ACt2aHVe51OxeA2HjbcL4MqFqXkrmQszJ1NOUuUu5u6Vqx/0lZSVNku7velL5FC/s5uEAj1lsBMhA==}
     engines: {node: '>=12'}
     dependencies:
       '@cspotcode/source-map-consumer': 0.8.0
@@ -81,8 +79,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/14.17.10:
-    resolution: {integrity: sha512-09x2d6kNBwjHgyh3jOUE2GE4DFoxDriDvWdu6mFhMP1ysynGYazt4ecZmJlL6/fe4Zi2vtYvTvtL7epjQQrBhA==}
+  /@types/node/14.17.34:
+    resolution: {integrity: sha512-USUftMYpmuMzeWobskoPfzDi+vkpe0dvcOBRNOscFrGxVp4jomnRxWuVohgqBow2xyIPC0S3gjxV/5079jhmDg==}
     dev: false
 
   /@types/node/16.6.2:
@@ -92,13 +90,6 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
-
-  /@types/yaml/1.9.7:
-    resolution: {integrity: sha512-8WMXRDD1D+wCohjfslHDgICd2JtMATZU8CkhH8LVJqcJs6dyYj5TGptzP8wApbmEullGBSsCEzzap73DQ1HJaA==}
-    deprecated: This is a stub types definition. yaml provides its own type definitions, so you do not need this installed.
-    dependencies:
-      yaml: 1.10.2
-    dev: true
 
   /acorn-walk/8.1.1:
     resolution: {integrity: sha512-FbJdceMlPHEAWJOILDk1fXD8lnTlEIWFkqtfk+MvmL5q/qlHfN7GEHcsFZWt/Tea9jRNPWUZG4G976nqAAmU9w==}
@@ -156,12 +147,12 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: true
 
-  /docx/6.0.3:
-    resolution: {integrity: sha512-e9bLznPAnZVNZS+Vddt/atphFy1GZ/ln/Xw1lGn19MIv8HHzP2ivTUUTjGPfpZpHinHdU+zsi8y32q8V8/guow==}
+  /docx/6.0.0:
+    resolution: {integrity: sha512-OfNirAhUb1O62cw34bdvqPhRUL/I7FTyE6wifS9wjQIYv9OvHKpb0gRCKAGbl6sONJLmeA6FaCKpvMQfOuZYwA==}
     engines: {node: '>=10'}
     dependencies:
       '@types/jszip': 3.4.1
-      '@types/node': 14.17.10
+      '@types/node': 14.17.34
       jszip: 3.7.1
       nanoid: 3.1.25
       xml: 1.0.1
@@ -503,9 +494,8 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /ts-node/10.2.1_c780171742f6906a053a603dfa210a4e:
-    resolution: {integrity: sha512-hCnyOyuGmD5wHleOQX6NIjJtYVIO8bPP8F2acWkB4W06wdlkgyvJtubO/I9NkI88hCFECbsEgoLc0VNkYmcSfw==}
-    engines: {node: '>=12.0.0'}
+  /ts-node/10.4.0_c780171742f6906a053a603dfa210a4e:
+    resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -518,7 +508,7 @@ packages:
       '@swc/wasm':
         optional: true
     dependencies:
-      '@cspotcode/source-map-support': 0.6.1
+      '@cspotcode/source-map-support': 0.7.0
       '@tsconfig/node10': 1.0.8
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
@@ -592,6 +582,7 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+    dev: false
 
   /yn/3.1.1:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
