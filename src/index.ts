@@ -1,8 +1,10 @@
-import { Packer, Document } from 'docx';
-import { promises as fs } from 'fs';
-import { DocumentCreator } from './document-creator.js';
-import { toDocx } from './markdown/index.js';
+import { Document, Packer } from 'docx';
 import { achievements, education, experiences, resume, skills } from './resume.js';
+
+import { DocumentCreator } from './document-creator.js';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { toDocx } from './markdown/index.js';
 import { yamlToResume } from './yaml.js';
 
 async function test() {
@@ -38,7 +40,7 @@ async function test() {
 // }
 
 const exportDocument = async () => {
-  const file = await fs.readFile('./resume-data.yaml');
+  const file = await fs.readFile(path.join(process.cwd(), './resume-data.yaml'));
   const yamlData = file.toString();
   const resumeData = yamlToResume(yamlData);
 

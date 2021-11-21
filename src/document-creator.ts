@@ -8,9 +8,10 @@ import {
   TabStopType,
   TextRun,
 } from 'docx';
-import { toDocx } from './markdown/index.js';
 import { Basics, Education, Profile, Resume, Work } from './types.js';
 import { emptyArray, nonnull } from './helper.js';
+
+import { toDocx } from './markdown/index.js';
 
 const DEFAULT_FONT_OPTIONS: IRunOptions = {
   font: 'Inter',
@@ -98,15 +99,15 @@ export class DocumentCreator {
         [
           education.startDate && education.endDate
             ? this.createInstitutionHeader(
-              education.institution ?? '',
-              `${education.startDate.year} - ${education.endDate.year}`,
-            )
+                education.institution ?? '',
+                `${education.startDate.year} - ${education.endDate.year}`,
+              )
             : null,
           this.createRoleText(`${education.studyType}`),
           ...(education.summary && education.summary.length > 0
             ? this.splitParagraphIntoBullets(education.summary ?? '').map((bulletPoint) =>
-              this.createBullet(bulletPoint),
-            )
+                this.createBullet(bulletPoint),
+              )
             : []),
         ].filter(nonnull),
       ),

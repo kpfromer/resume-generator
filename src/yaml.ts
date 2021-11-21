@@ -1,4 +1,4 @@
-import { Resume } from './types';
+import { Resume } from './types.js';
 import YAML from 'yaml';
 
 export function yamlToResume(yamlString: string): Resume {
