@@ -1,9 +1,9 @@
+type IParagraphPropertiesOptions = import('docx').IParagraphPropertiesOptions;
+type IRunPropertiesOptions = import('docx').IRunPropertiesOptions;
+
 declare namespace JSX {
   interface DocxTag {}
-  interface DocxPargraphTag extends DocxTag {
-    bold?: boolean;
-  }
-  interface DocxSpanTag extends DocxTag {
-    bold?: boolean;
-  }
+  interface DocxSectionTag extends DocxTag {}
+  interface DocxPargraphTag extends DocxTag, IParagraphPropertiesOptions {}
+  interface DocxTextTag extends DocxTag, IRunPropertiesOptions {}
 }

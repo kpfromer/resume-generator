@@ -12,7 +12,7 @@ import {
   TextRun,
 } from 'docx';
 
-type AttributeValue = number | string | Date | boolean | string[];
+type AttributeValue = any;
 
 export interface Children {
   children?: AttributeValue;
@@ -30,25 +30,41 @@ export function createElement(
   name: string | CustomElementHandler,
   attributes: (Attributes & Children) | undefined = {},
   ...contents: any[]
-): Paragraph {
+): any {
   const children = (attributes && attributes.children) || contents;
 
   if (typeof name === 'string') {
-    console.log('--------------');
-    console.log({ name, attributes, contents });
-    console.log('--------------');
+    // console.log('--------------');
+    // console.log({ name, attributes, contents });
+    // console.log('--------------');
     switch (name) {
+      case 'section':
+        return children ?? [];
       case 'p':
-        return new Paragraph((attributes?.children as string) ?? '');
-      case 'span':
-        return new Paragraph('');
+        return new Paragraph({
+          ...attributes,
+          // TODO: extract this out
+          // Ensure free text is converted to textrun
+          children: children.map((child) => {
+            if (typeof child === 'string') {
+              return new TextRun(child);
+            } else {
+              return child;
+            }
+          }),
+        });
+      case 'text':
+        return new TextRun({
+          ...attributes,
+          children,
+        });
       default:
         throw new TypeError('Error');
     }
   } else {
-    console.log('----- START CUSTOM -----');
-    console.log(name(children ? { children, ...attributes } : attributes, contents));
-    console.log('----- END CUSTOM -----');
-    return new Paragraph('');
+    // console.log('----- START CUSTOM -----');
+    // console.log(name(children ? { children, ...attributes } : attributes, contents));
+    // console.log('----- END CUSTOM -----');
+    return name(children ? { children, ...attributes } : attributes, contents);
   }
 }

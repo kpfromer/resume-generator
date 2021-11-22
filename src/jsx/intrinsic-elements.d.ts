@@ -1,7 +1,10 @@
+type Pargraph = import('docx').Pargraph;
+
 declare namespace JSX {
-  type Element = string;
+  type Element = Paragraph[];
   interface IntrinsicElements {
+    section: DocxSectionTag;
     p: DocxPargraphTag;
-    span: DocxSpanTag;
+    text: DocxTextTag;
   }
 }
