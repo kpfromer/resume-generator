@@ -26,12 +26,17 @@ export interface Attributes {
   [key: string]: AttributeValue;
 }
 
+const flattenChildren = (children) =>
+  children.reduce(
+    (items, child) => (Array.isArray(child) ? [...items, ...child] : [...items, child]),
+    [],
+  );
 export function createElement(
   name: string | CustomElementHandler,
   attributes: (Attributes & Children) | undefined = {},
   ...contents: any[]
 ): any {
-  const children = (attributes && attributes.children) || contents;
+  const children = flattenChildren((attributes && attributes.children) || contents);
 
   if (typeof name === 'string') {
     // console.log('--------------');
