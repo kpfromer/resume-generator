@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "jsxFactory": "docxReact.createElement",
+    "jsxFragmentFactory": "docxReact.Fragment",
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Basic Options */

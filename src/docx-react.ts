@@ -26,24 +26,38 @@ export interface Attributes {
   [key: string]: AttributeValue;
 }
 
-const flattenChildren = (children) =>
-  children.reduce(
-    (items, child) => (Array.isArray(child) ? [...items, ...child] : [...items, child]),
-    [],
-  );
+const flattenAndDefragmentChildren = (children) =>
+  // flatten
+  children
+    .reduce((items, child) => (Array.isArray(child) ? [...items, ...child] : [...items, child]), [])
+    // defragment
+    .reduce(
+      (items, child) =>
+        child.type === 'fragment' ? [...items, ...child.children] : [...items, child],
+      [],
+    );
+
+export function Fragment({ children }) {
+  return { type: 'fragment', children };
+}
+
 export function createElement(
   name: string | CustomElementHandler,
   attributes: (Attributes & Children) | undefined = {},
   ...contents: any[]
 ): any {
-  const children = flattenChildren((attributes && attributes.children) || contents);
+  const children = flattenAndDefragmentChildren((attributes && attributes.children) || contents);
 
   if (typeof name === 'string') {
     // console.log('--------------');
     // console.log({ name, attributes, contents });
     // console.log('--------------');
+
     switch (name) {
       case 'section':
+        console.log((attributes && attributes.children) || contents);
+        console.log('-----');
+        console.log(children);
         return children ?? [];
       case 'p':
         return new Paragraph({
@@ -61,7 +75,7 @@ export function createElement(
       case 'text':
         return new TextRun({
           ...attributes,
-          children,
+          children: children,
         });
       default:
         throw new TypeError('Error');
