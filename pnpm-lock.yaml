@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/lodash': ^4.14.177
   '@types/node': 16.11.9
-  docx: 6.0.0
+  docx: 6.0.3
   lodash: ^4.17.21
   prettier: 2.4.1
   remark-parse: ^10.0.0
@@ -15,7 +15,7 @@ specifiers:
   yaml: ^1.10.2
 
 dependencies:
-  docx: 6.0.0
+  docx: 6.0.3
   lodash: 4.17.21
   remark-parse: 10.0.0
   ts-mdast: 1.0.0
@@ -155,8 +155,8 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: true
 
-  /docx/6.0.0:
-    resolution: {integrity: sha512-OfNirAhUb1O62cw34bdvqPhRUL/I7FTyE6wifS9wjQIYv9OvHKpb0gRCKAGbl6sONJLmeA6FaCKpvMQfOuZYwA==}
+  /docx/6.0.3:
+    resolution: {integrity: sha512-e9bLznPAnZVNZS+Vddt/atphFy1GZ/ln/Xw1lGn19MIv8HHzP2ivTUUTjGPfpZpHinHdU+zsi8y32q8V8/guow==}
     engines: {node: '>=10'}
     dependencies:
       '@types/jszip': 3.4.1
