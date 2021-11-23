@@ -6,5 +6,6 @@ declare namespace JSX {
     section: DocxSectionTag;
     p: DocxPargraphTag;
     text: DocxTextTag;
+    'external-link': DocxExternalLinkTag;
   }
 }

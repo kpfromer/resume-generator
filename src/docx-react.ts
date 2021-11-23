@@ -4,6 +4,7 @@
 import {
   AlignmentType,
   Document,
+  ExternalHyperlink,
   HeadingLevel,
   IRunOptions,
   Paragraph,
@@ -72,10 +73,15 @@ export function createElement(
             }
           }),
         });
+      case 'external-link':
+        return new ExternalHyperlink({
+          link: attributes.link,
+          child: children[0],
+        });
       case 'text':
         return new TextRun({
           ...attributes,
-          children: children,
+          children,
         });
       default:
         throw new TypeError('Error');

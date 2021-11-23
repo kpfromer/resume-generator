@@ -6,4 +6,7 @@ declare namespace JSX {
   interface DocxSectionTag extends DocxTag {}
   interface DocxPargraphTag extends DocxTag, IParagraphPropertiesOptions {}
   interface DocxTextTag extends DocxTag, IRunPropertiesOptions {}
+  interface DocxExternalLinkTag extends DocxTag {
+    link: string;
+  }
 }
