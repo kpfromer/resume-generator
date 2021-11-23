@@ -46,16 +46,35 @@ const DateText = ({ startDate, endDate, isCurrent }) => {
   return <text>{text}</text>;
 };
 
+const removeHttps = (url: string) => url.replace('http://', '').replace('https://', '');
+
+const insertIntoArray = (arr, value) => {
+  return arr.reduce((result, element, index, array) => {
+    result.push(element);
+
+    if (index < array.length - 1) {
+      result.push(value);
+    }
+
+    return result;
+  }, []);
+};
+
 const Resume = (resume) => (
   <section>
-    <p heading={HeadingLevel.TITLE} alignment={AlignmentType.CENTER}>
-      {resume.basics.name}
-    </p>
+    <p heading={HeadingLevel.TITLE}>{resume.basics.name}</p>
 
-    <p alignment={AlignmentType.CENTER}>
-      {resume.basics.profiles.map((profile, index) => (
-        <text bold> . {profile.url}</text>
-      ))}
+    <p>{resume.basics.tagLine}</p>
+
+    <p>
+      {insertIntoArray(
+        resume.basics.profiles.map((profile) => (
+          <external-link link={profile.url}>
+            <text bold>{removeHttps(profile.url)}</text>
+          </external-link>
+        )),
+        <text>{'     '}</text>,
+      )}
     </p>
 
     <p heading={HeadingLevel.HEADING_1}>Experience</p>
