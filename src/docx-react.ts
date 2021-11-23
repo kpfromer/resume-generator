@@ -13,6 +13,8 @@ import {
   TextRun,
 } from 'docx';
 
+import lodash from 'lodash';
+
 type AttributeValue = any;
 
 export interface Children {
@@ -29,8 +31,8 @@ export interface Attributes {
 
 const flattenAndDefragmentChildren = (children) =>
   // flatten
-  children
-    .reduce((items, child) => (Array.isArray(child) ? [...items, ...child] : [...items, child]), [])
+  lodash
+    .flattenDeep<any>(children)
     // defragment
     .reduce(
       (items, child) =>

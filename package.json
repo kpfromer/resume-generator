@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kpfromer/resume#readme",
   "dependencies": {
     "docx": "6.0.0",
+    "lodash": "^4.17.21",
     "remark-parse": "^10.0.0",
     "ts-mdast": "^1.0.0",
     "unified": "^10.1.0",
@@ -31,6 +32,7 @@
     "yaml": "^1.10.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.177",
     "@types/node": "^16.6.2",
     "prettier": "^2.3.2",
     "ts-node": "10.4.0",
