@@ -135,11 +135,7 @@ const Resume = (resume) => (
 
 const createResume = (component, config) => {
   const doc = new Document({
-    sections: [
-      {
-        children: component(config),
-      },
-    ],
+    sections: [component(config)],
   });
 
   return doc;

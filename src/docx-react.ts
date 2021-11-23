@@ -61,7 +61,10 @@ export function createElement(
         console.log((attributes && attributes.children) || contents);
         console.log('-----');
         console.log(children);
-        return children ?? [];
+        return {
+          children,
+          properties: attributes,
+        };
       case 'p':
         return new Paragraph({
           ...attributes,
