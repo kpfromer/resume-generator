@@ -1,19 +1,10 @@
 /// <reference path="./jsx/element-types.d.ts" />
 /// <reference path="./jsx/intrinsic-elements.d.ts" />
 
-import {
-  AlignmentType,
-  Document,
-  ExternalHyperlink,
-  HeadingLevel,
-  IRunOptions,
-  Paragraph,
-  TabStopPosition,
-  TabStopType,
-  TextRun,
-} from 'docx';
-
+import docx from 'docx';
 import lodash from 'lodash';
+
+const { ExternalHyperlink, Paragraph, TextRun } = docx;
 
 type AttributeValue = any;
 
@@ -81,7 +72,7 @@ export function createElement(
       case 'external-link':
         return new ExternalHyperlink({
           link: attributes.link,
-          child: children[0],
+          children,
         });
       case 'text':
         return new TextRun({

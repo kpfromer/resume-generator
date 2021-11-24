@@ -1,20 +1,12 @@
 import * as docxReact from './docx-react';
 
-import {
-  AlignmentType,
-  Document,
-  HeadingLevel,
-  Packer,
-  TabStopPosition,
-  TabStopType,
-  convertInchesToTwip,
-} from 'docx';
-
 import { DocxMarkdownRenderer } from './markdown';
-import { Resume as ResumeType } from './types';
+import docx from 'docx';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { yamlToResume } from './yaml';
+
+const { Document, HeadingLevel, Packer, TabStopType, convertInchesToTwip } = docx;
 
 function getMonthFromInt(value: number): string {
   switch (value) {
@@ -53,7 +45,7 @@ const DateText = ({ startDate, endDate, isCurrent }) => {
 
   const text = `${startDateText} - ${endDateText}`;
 
-  return <text>{`\t${text}`}</text>;
+  return <text>{text}</text>;
 };
 
 const removeHttps = (url: string) => url.replace('http://', '').replace('https://', '');
@@ -124,14 +116,14 @@ const Resume = (resume) => (
           <text bold size={2 * 13}>
             {position.name}
           </text>
+          <text> | </text>
+          <text italics>{position.position}</text>
+          <text> | </text>
           <DateText
             startDate={position.startDate}
             endDate={position.endDate}
             isCurrent={!position.endDate}
           />
-        </p>
-        <p spacing={{ after: convertInchesToTwip(0.05) }}>
-          <text italics>{position.position}</text>
         </p>
         <DocxMarkdownRenderer markdown={position.summary} />
       </>
@@ -148,6 +140,7 @@ const Resume = (resume) => (
           <text bold size={2 * 13}>
             {school.institution}
           </text>
+          <text> | </text>
           <DateText
             startDate={school.startDate}
             endDate={school.endDate}
