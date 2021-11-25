@@ -1,4 +1,4 @@
-import * as docxReact from './docx-react';
+import * as docxReact from 'docx-react';
 
 import { DocxMarkdownRenderer } from './markdown';
 import docx from 'docx';
@@ -63,25 +63,14 @@ const insertIntoArray = (arr, value) => {
 };
 
 const margins = {
-  top: 0.01,
-  bottom: 0.01,
+  top: 0.25,
+  bottom: 0.25,
   left: 0.25,
   right: 0.25,
 };
 
-const Resume = (resume) => (
-  <section
-    page={{
-      margin: {
-        top: convertInchesToTwip(margins.top),
-        bottom: convertInchesToTwip(margins.bottom),
-        left: convertInchesToTwip(margins.left),
-        right: convertInchesToTwip(margins.right),
-        header: 0,
-        footer: 0,
-      },
-    }}
-  >
+const AboutMe = ({ resume }) => (
+  <>
     <p heading={HeadingLevel.TITLE}>{resume.basics.name}</p>
     <p spacing={{ before: convertInchesToTwip(0.05), after: convertInchesToTwip(0.05) }}>
       {resume.basics.tagLine}
@@ -98,9 +87,11 @@ const Resume = (resume) => (
         <text>{' | '}</text>,
       )}
     </p>
+  </>
+);
 
-    <DocxMarkdownRenderer markdown={resume.basics.summary} />
-
+const Experience = ({ resume }) => (
+  <>
     <p heading={HeadingLevel.HEADING_1} thematicBreak spacing={{ before: 100 }}>
       Experience
     </p>
@@ -128,6 +119,11 @@ const Resume = (resume) => (
         <DocxMarkdownRenderer markdown={position.summary} />
       </>
     ))}
+  </>
+);
+
+const Education = ({ resume }) => (
+  <>
     <p heading={HeadingLevel.HEADING_1} thematicBreak spacing={{ after: 150 }}>
       Education
     </p>
@@ -152,6 +148,29 @@ const Resume = (resume) => (
         </p>
       </>
     ))}
+  </>
+);
+
+const Resume = (resume) => (
+  <section
+    page={{
+      margin: {
+        top: convertInchesToTwip(margins.top),
+        bottom: convertInchesToTwip(margins.bottom),
+        left: convertInchesToTwip(margins.left),
+        right: convertInchesToTwip(margins.right),
+        header: 0,
+        footer: 0,
+      },
+    }}
+  >
+    <AboutMe resume={resume} />
+
+    <DocxMarkdownRenderer markdown={resume.basics.summary} />
+
+    <Experience resume={resume} />
+
+    <Education resume={resume} />
   </section>
 );
 
@@ -225,7 +244,6 @@ const getConfig = async () => {
 
 (async function () {
   const config = await getConfig();
-  // console.dir(toDocx(config.work![1].summary!), null);
   const resumeDocx = createResume(Resume, config);
 
   const buffer = await Packer.toBuffer(resumeDocx);

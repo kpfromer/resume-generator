@@ -1,7 +1,7 @@
-import * as docxReact from './docx-react';
+import * as docxReact from 'docx-react';
 
-import { AlignmentType, IRunOptions, Paragraph, ParagraphChild, TextRun } from 'docx';
-import { assertText, isList, isListItem, isParagraph, isRoot, isStrong, isText } from 'ts-mdast';
+import { IRunOptions, Paragraph } from 'docx';
+import { isList, isListItem, isParagraph, isRoot, isStrong, isText } from 'ts-mdast';
 
 import { Node } from 'unist';
 import remarkParse from 'remark-parse';
@@ -15,7 +15,6 @@ type RequiredOptions = Required<Options>;
 
 function transformer(node: Node, options: RequiredOptions, ignoreParagraph = false): any {
   const { textOptions } = options;
-  console.log(node);
 
   if (isParagraph(node) && !ignoreParagraph) {
     return <p>{node.children.map((node) => transformer(node, options))}</p>;
