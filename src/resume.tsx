@@ -3,24 +3,54 @@ import * as docxReact from 'docx-react';
 import { getMonthFromInt, insertIntoArray, removeHttps } from './helpers';
 
 import { DocxMarkdownRenderer } from './markdown';
+import { ResumeDate } from './types';
+import _ from 'lodash';
 import docx from 'docx';
 
-const { Document, HeadingLevel, Packer, TabStopType, convertInchesToTwip } = docx;
+const { Document, HeadingLevel, TabStopType, convertInchesToTwip } = docx;
 
-const DateText = ({ startDate, endDate, isCurrent }) => {
-  const startDateText = getMonthFromInt(startDate.month) + '. ' + startDate.year;
-  const endDateText = isCurrent ? 'Present' : `${getMonthFromInt(endDate.month)}. ${endDate.year}`;
+const DateText = ({
+  startDate,
+  endDate,
+}: {
+  startDate: ResumeDate;
+  endDate?: ResumeDate | undefined;
+}) => {
+  const length = 4;
+  const omission = '.';
+  const getTruncated = (string: string) => {
+    if (string.length === length - omission.length) {
+      return string;
+    }
+    return _.truncate(string, { length, omission });
+  };
+  const getDateText = (data: ResumeDate) =>
+    `${getTruncated(getMonthFromInt(data.month))} ${data.year}`;
 
-  const text = `${startDateText} - ${endDateText}`;
+  const isCurrent = endDate !== undefined;
+  let text: string;
+  const startDateText = getDateText(startDate);
+
+  if (isCurrent) {
+    // Is the same start and end months/years
+    if (isCurrent && startDate.month === endDate.month && startDate.year === endDate.year) {
+      text = startDateText;
+    } else {
+      const endDateText = getDateText(endDate);
+      text = `${startDateText} - ${endDateText}`;
+    }
+  } else {
+    text = `${startDateText} - Present`;
+  }
 
   return <text>{text}</text>;
 };
 
 const margins = {
-  top: 0.25,
-  bottom: 0.25,
-  left: 0.25,
-  right: 0.25,
+  top: 0.5,
+  bottom: 0.5,
+  left: 0.5,
+  right: 0.5,
 };
 
 const AboutMe = ({ resume }) => (
@@ -46,16 +76,15 @@ const AboutMe = ({ resume }) => (
 
 const Experience = ({ resume }) => (
   <>
-    <p heading={HeadingLevel.HEADING_1} thematicBreak spacing={{ before: 100 }}>
+    <p heading={HeadingLevel.HEADING_1} thematicBreak spacing={{ before: 150 }}>
       Experience
     </p>
     {resume.work.map((position, index) => (
       <>
         <p
-          tabStops={[{ type: TabStopType.RIGHT, position: convertInchesToTwip(8 - margins.right) }]}
           spacing={{
-            before: convertInchesToTwip(0.05),
-            after: convertInchesToTwip(0.05),
+            before: convertInchesToTwip(0.1),
+            after: convertInchesToTwip(0.1),
           }}
         >
           <text bold size={2 * 13}>
@@ -64,11 +93,7 @@ const Experience = ({ resume }) => (
           <text> | </text>
           <text italics>{position.position}</text>
           <text> | </text>
-          <DateText
-            startDate={position.startDate}
-            endDate={position.endDate}
-            isCurrent={!position.endDate}
-          />
+          <DateText startDate={position.startDate} endDate={position.endDate} />
         </p>
         <DocxMarkdownRenderer markdown={position.summary} />
       </>
@@ -83,19 +108,12 @@ const Education = ({ resume }) => (
     </p>
     {resume.education.map((school) => (
       <>
-        <p
-          tabStops={[{ type: TabStopType.RIGHT, position: convertInchesToTwip(8 - margins.right) }]}
-          spacing={{ before: convertInchesToTwip(0.05), after: convertInchesToTwip(0.05) }}
-        >
+        <p spacing={{ before: convertInchesToTwip(0.1), after: convertInchesToTwip(0.1) }}>
           <text bold size={2 * 13}>
             {school.institution}
           </text>
           <text> | </text>
-          <DateText
-            startDate={school.startDate}
-            endDate={school.endDate}
-            isCurrent={!school.endDate}
-          />
+          <DateText startDate={school.startDate} endDate={school.endDate} />
         </p>
         <p>
           <text italics>{school.studyType}</text>
