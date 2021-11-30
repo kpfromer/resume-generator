@@ -123,6 +123,24 @@ const Education = ({ resume }) => (
   </>
 );
 
+const Skills = ({ resume }) => {
+  const sections = Object.entries(resume.skills);
+  return (
+    <>
+      <p heading={HeadingLevel.HEADING_1} thematicBreak spacing={{ before: 150, after: 150 }}>
+        Skills
+      </p>
+
+      {sections.map(([title, skills]) => (
+        <p>
+          <text bold>{title}</text>
+          <text> {skills}</text>
+        </p>
+      ))}
+    </>
+  );
+};
+
 export const Resume = (resume) => (
   <section
     page={{
@@ -143,6 +161,8 @@ export const Resume = (resume) => (
     <Experience resume={resume} />
 
     <Education resume={resume} />
+
+    <Skills resume={resume} />
   </section>
 );
 
