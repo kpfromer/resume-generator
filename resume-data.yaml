@@ -1,0 +1,107 @@
+basics:
+  name: Kyle Pfromer
+  tagLine: Computer Scientist | Software Engineer
+  email: kpfromer2@gmail.com
+  phone: 9706145780
+  # TODO: change to update
+  summary: |-
+    I am a full stack developer that uses ReactJs, AngularJs for the frontend and ExpressJs and SpringIO for the backend. I also have experience in C++,
+    which I have used to create an assembler, compiler, and an interpreter.
+  profiles:
+    - network: Personal Site
+      url: https://kylepfromer.com
+    - network: LinkedIn
+      username: kyle-pfromer
+      url: https://linkedin.com/in/kyle-pfromer
+    - network: GitHub
+      username: kpfromer
+      url: https://github.com/kpfromer
+work:
+  # - name: Meta
+  #   position: SWE Intern
+  #   startDate:
+  #     month: 5
+  #     year: 2022
+  #   endDate:
+  #     month: 8
+  #     year: 2022
+  #   summary: ""
+  - name: HackCU
+    position: Director
+    startDate:
+      month: 12
+      year: 2019
+    summary: |
+      - Lead website redesign and creation.
+      - Helped organize HackCU VI, a 400 person event hackathon
+      - Created live schedule website to help hackers get information and see event schedule.
+      - Presented "Intro to Git/GitHub" at HackCU VI.
+
+  - name: Facebook
+    position: SWE Intern
+    startDate:
+      month: 5
+      year: 2021
+    endDate:
+      month: 8
+      year: 2021
+    summary: |-
+      A part of the internal Network UI team.
+
+      - Delivered an internal UI to enable network engineers to quickly view and test various network topologies.
+      - Worked with various technologies, such as React, Hack, Thrift, GraphQL.
+
+  - name: Google
+    position: SWE Intern
+    startDate:
+      month: 5
+      year: 2020
+    endDate:
+      month: 8
+      year: 2020
+    summary: |-
+      - Worked on integrating Google Cloud AI's Platform Optimizer Product with JupyterLab.
+      - Enabled users to easily tune their machine learning model hyperparameters within the JupyterLab environment.
+      - Worked with user experience designers, product managers, and backend engineers to deliver the first full feature user interface for the Vizier Optimizer service.
+
+  - name: Fairview H.S. Web Team
+    position: Webmaster and Silent Auction Developer
+    startDate:
+      month: 5
+      year: 2018
+    endDate:
+      month: 8
+      year: 2019
+    summary: |
+      - Programmed and managed an organization of 8 members which maintained Fairview High School's student-run website, written with Ruby On Rails and has over 400,000 lines of code and nearly 5,000 commits; on average it served over 100,000 weekly page views from students, staff, and parents.
+      - Developed a content creation system (akin to Weebly or Squarespace) that helps our counselors create helpful and engaging content for students and parents; collaborated with counselors.
+      - Created Silent Auction, a responsive web application written for the school's National Honor Society used by parents and students to bid on charity items.
+      - The full stack application uses MongoDB, an ExpressJs backend with user authentication (for admins), and a ReactJs frontend.
+education:
+  - institution: University of Colorado, Boulder
+    studyType: Computer Science Bachelor of Science
+    startDate:
+      month: 8
+      year: 2019
+    endDate:
+      month: 5
+      year: 2023
+
+  - institution: Fairview High School
+    studyType: 'Webteam Leader and Robotics Leader'
+    startDate:
+      month: 8
+      year: 2015
+    endDate:
+      month: 5
+      year: 2019
+skills:
+  Languages: TypeScript, JavaScript, Java, Python, C++, HTML5, CSS, PHP, Ruby
+  Frameworks: Angular, SpringIO, Flask
+  'Testing Tools': Jest, Mocha, Mockito, JUnit, Protractor
+  'Continuous Integration Tools': Jenkins, TravisCI, CircleCI
+  'Production Tools': AWS(BeanStalk, Route 53, S3, CloudFront), Digital Ocean, Heroku, Docker, NPM
+  'JavaScript Technologies': ReactJs, ExpressJs, Gulp, Grunt, Angular
+  Databases: MongoDB, MySQL, PostgreSQL
+  'Operating Systems': Linux (use Arch daily), Mac OS X, Windows
+projects: []
