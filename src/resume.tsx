@@ -53,24 +53,30 @@ const margins = {
   right: 0.5,
 };
 
+const Profiles = ({ resume }) => (
+
+  <p spacing={{ after: 150 }}>
+    {insertIntoArray(
+      resume.basics.profiles.map((profile) => (
+        <external-link link={profile.url}>
+          <text bold color="#3b82f6">
+            {removeHttps(profile.displayName ?? profile.url)}
+          </text>
+        </external-link>
+      )),
+      <text>{' | '}</text>,
+    )}
+  </p>
+)
+
 const AboutMe = ({ resume }) => (
   <>
     <p heading={HeadingLevel.TITLE}>{resume.basics.name}</p>
     <p spacing={{ before: convertInchesToTwip(0.05), after: convertInchesToTwip(0.05) }}>
       {resume.basics.tagLine}
     </p>
-    <p spacing={{ after: 150 }}>
-      {insertIntoArray(
-        resume.basics.profiles.map((profile) => (
-          <external-link link={profile.url}>
-            <text bold color="#3b82f6">
-              {removeHttps(profile.url)}
-            </text>
-          </external-link>
-        )),
-        <text>{' | '}</text>,
-      )}
-    </p>
+
+    <Profiles resume={resume} />
   </>
 );
 
@@ -162,7 +168,7 @@ export const Resume = (resume) => (
 
     <Education resume={resume} />
 
-    <Skills resume={resume} />
+    {/* <Skills resume={resume} /> */}
   </section>
 );
 

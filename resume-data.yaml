@@ -4,15 +4,20 @@ basics:
   email: kpfromer2@gmail.com
   phone: 9706145780
   # TODO: change to update
-  summary: |-
-    I am a full stack developer that uses ReactJs, AngularJs for the frontend and ExpressJs and SpringIO for the backend. I also have experience in C++,
-    which I have used to create an assembler, compiler, and an interpreter.
+  summary: |
+    I am a full stack web developer that is passionate about working on challenging problems. I am enthusiastic about working on distributed systems and large scale problems. I have worked at small and large companies. I am excited to have a large impact at a high growth company.
+  # summary: |-
+  #   I am a full stack developer that uses ReactJs, AngularJs for the frontend and ExpressJs and SpringIO for the backend. I also have experience in C++,
+  #   which I have used to create an assembler, compiler, and an interpreter.
   profiles:
     - network: Personal Site
       url: https://kylepfromer.com
     - network: LinkedIn
       username: kyle-pfromer
       url: https://linkedin.com/in/kyle-pfromer
+    - network: Email
+      displayName: hi@kylepfromer.com
+      url: mailto:hi@kpfromer.com
     - network: GitHub
       username: kpfromer
       url: https://github.com/kpfromer
