@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/lodash': ^4.14.177
   '@types/node': 16.11.9
-  docx: 7.1.2
+  docx: 7.3.0
   docx-react: ^1.0.4
   lodash: ^4.17.21
   prettier: 2.4.1
@@ -16,8 +16,8 @@ specifiers:
   yaml: ^1.10.2
 
 dependencies:
-  docx: 7.1.2
-  docx-react: 1.0.4_docx@7.1.2
+  docx: 7.3.0
+  docx-react: 1.0.4_docx@7.3.0
   lodash: 4.17.21
   remark-parse: 10.0.0
   ts-mdast: 1.0.0
@@ -84,6 +84,11 @@ packages:
 
   /@types/node/16.11.9:
     resolution: {integrity: sha512-MKmdASMf3LtPzwLyRrFjtFFZ48cMf8jmX5VRYrDQiJa8Ybu5VAmkqBWqKU8fdCwD8ysw4mQ9nrEHvzg6gunR7A==}
+    dev: true
+
+  /@types/node/17.0.0:
+    resolution: {integrity: sha512-eMhwJXc931Ihh4tkU+Y7GiLzT/y/DBNpNtr4yU9O2w3SYBsr9NaOPhQlLKRmoWtI54uNwuo0IOUFQjVOTZYRvw==}
+    dev: false
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -145,20 +150,20 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: true
 
-  /docx-react/1.0.4_docx@7.1.2:
+  /docx-react/1.0.4_docx@7.3.0:
     resolution: {integrity: sha512-LE4h1QqxpdE1Rq/UofrUO7gvAmzCORWgtFO0aEXZYml7MXZ0JjWOZW06ZcWzMlKFCXT0A5STC8ejeSMcbiBnuQ==}
     peerDependencies:
       docx: ~7.0.0
     dependencies:
-      docx: 7.1.2
+      docx: 7.3.0
       lodash.flattendeep: 4.4.0
     dev: false
 
-  /docx/7.1.2:
-    resolution: {integrity: sha512-uzdkDh0u1KNRmIprxuZ9x2ti2/3xn+TfBGfjIPplR6WFdhK13hL1NcgdJsu9+QsASAqjuogiJiiEap5fv8ubow==}
+  /docx/7.3.0:
+    resolution: {integrity: sha512-OkSGlDNWMRFY07OEhUTx1ouuzYi8s1b67JDI6m5/5ek4xoshtP+/Rx8eRdY8LbhvpFkngvUantvTsxY4XW8Heg==}
     engines: {node: '>=10'}
     dependencies:
-      '@types/node': 16.11.9
+      '@types/node': 17.0.0
       jszip: 3.7.1
       nanoid: 3.1.25
       xml: 1.0.1
