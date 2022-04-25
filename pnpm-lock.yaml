@@ -13,7 +13,7 @@ specifiers:
   typescript: 4.5.2
   unified: ^10.1.0
   vfile: ^5.0.2
-  yaml: ^1.10.2
+  yaml: ^2.0.0
 
 dependencies:
   docx: 7.1.2
@@ -23,7 +23,7 @@ dependencies:
   ts-mdast: 1.0.0
   unified: 10.1.0
   vfile: 5.0.2
-  yaml: 1.10.2
+  yaml: 2.0.1
 
 devDependencies:
   '@types/lodash': 4.14.177
@@ -593,9 +593,9 @@ packages:
     resolution: {integrity: sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=}
     dev: false
 
-  /yaml/1.10.2:
-    resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
-    engines: {node: '>= 6'}
+  /yaml/2.0.1:
+    resolution: {integrity: sha512-1NpAYQ3wjzIlMs0mgdBmYzLkFgWBIWrzYVDYfrixhoFNNgJ444/jT2kUT2sicRbJES3oQYRZugjB6Ro8SjKeFg==}
+    engines: {node: '>= 14'}
     dev: false
 
   /yn/3.1.1:
