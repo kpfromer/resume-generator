@@ -28,7 +28,7 @@
     "ts-mdast": "^1.0.0",
     "unified": "^10.1.0",
     "vfile": "^5.0.2",
-    "yaml": "^1.10.2"
+    "yaml": "^2.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.177",
