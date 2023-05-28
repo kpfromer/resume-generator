@@ -6,7 +6,7 @@ specifiers:
   docx: 7.1.2
   docx-react: ^1.0.4
   lodash: ^4.17.21
-  prettier: 2.4.1
+  prettier: 2.8.8
   remark-parse: ^10.0.0
   ts-mdast: ^1.0.0
   ts-node: 10.4.0
@@ -28,7 +28,7 @@ dependencies:
 devDependencies:
   '@types/lodash': 4.14.177
   '@types/node': 16.11.9
-  prettier: 2.4.1
+  prettier: 2.8.8
   ts-node: 10.4.0_6d6d60348da931c98bc2cf01b7fcd2a7
   typescript: 4.5.2
 
@@ -445,8 +445,8 @@ packages:
       is-hexadecimal: 2.0.0
     dev: false
 
-  /prettier/2.4.1:
-    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
+  /prettier/2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
