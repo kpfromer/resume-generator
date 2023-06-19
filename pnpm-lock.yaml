@@ -12,7 +12,7 @@ specifiers:
   ts-node: 10.4.0
   typescript: 4.5.2
   unified: ^10.1.0
-  vfile: ^5.0.2
+  vfile: ^6.0.0
   yaml: ^1.10.2
 
 dependencies:
@@ -22,7 +22,7 @@ dependencies:
   remark-parse: 10.0.0
   ts-mdast: 1.0.0
   unified: 10.1.0
-  vfile: 5.0.2
+  vfile: 6.0.0
   yaml: 1.10.2
 
 devDependencies:
@@ -573,6 +573,13 @@ packages:
       unist-util-stringify-position: 3.0.0
     dev: false
 
+  /vfile-message/4.0.1:
+    resolution: {integrity: sha512-Z1WqUoIK6T6LLoyO64ncUapmjlA84JqKRQFjcG0kZnnyysfq2rMyg5NvKhkQ16GH9FRCRT+Rk4G0aMxgKYS16g==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-stringify-position: 3.0.0
+    dev: false
+
   /vfile/5.0.2:
     resolution: {integrity: sha512-5cV+K7tX83MT3bievROc+7AvHv0GXDB0zqbrTjbOe+HRbkzvY4EP+wS3IR77kUBCoWFMdG9py18t0sesPtQ1Rw==}
     dependencies:
@@ -580,6 +587,14 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.0
       vfile-message: 3.0.2
+    dev: false
+
+  /vfile/6.0.0:
+    resolution: {integrity: sha512-wx7bOMmEl8bY5WPaXTGsK8YxPLoFiUiDg+m+lBACA1QGcagj3sUyxkX0F+W/Nmn4MHH7G4sXBekpYWRxQE2eHg==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-stringify-position: 3.0.0
+      vfile-message: 4.0.1
     dev: false
 
   /xml-js/1.6.11:

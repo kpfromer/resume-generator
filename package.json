@@ -27,7 +27,7 @@
     "remark-parse": "^10.0.0",
     "ts-mdast": "^1.0.0",
     "unified": "^10.1.0",
-    "vfile": "^5.0.2",
+    "vfile": "^6.0.0",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
