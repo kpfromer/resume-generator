@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/kpfromer/resume#readme",
   "dependencies": {
-    "docx": "7.1.2",
+    "docx": "8.6.0",
     "docx-react": "^1.0.4",
     "lodash": "^4.17.21",
     "remark-parse": "^10.0.0",
